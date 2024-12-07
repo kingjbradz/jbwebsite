@@ -2,7 +2,7 @@ import React from "react";
 import { Typography, useMediaQuery, Stack } from "@mui/material";
 import { LineBox, RowBox } from "../Components/Elements";
 
-const About = ({ themeMode }) => {
+const StackCont = ({ themeMode }) => {
   const is335 = useMediaQuery("( min-width: 335px )");
   const is750 = useMediaQuery("( min-width: 750px )");
   const is1000 = useMediaQuery("( min-width: 1000px )");
@@ -32,4 +32,4 @@ const About = ({ themeMode }) => {
   );
 };
 
-export default About;
+export default StackCont;

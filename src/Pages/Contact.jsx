@@ -21,24 +21,26 @@ const Contact = ({ themeMode }) => {
   }
   return (
     <Container sx={{ flexDirection: "column", height: "100%" }}>
+
       <form
         onSubmit={handleSubmit}
         style={{
           display: "flex",
           flexDirection: "column",
           textAlign: "center",
-          minWidth: is600 ? "575px" : "100%",
+          minWidth: is600 ? "350px" : "100%",
           padding: "8px",
           height: "100%",
           justifyContent: "center"
         }}
       >
-        
+        <Typography sx={{ marginBottom: 2 }}>Get in Touch</Typography>
         <StyledTextField
           id="name"
           type="name"
           name="name"
           color="outline"
+          size="small"
           label={
             <label
               htmlFor="name"
@@ -59,6 +61,7 @@ const Contact = ({ themeMode }) => {
           type="email"
           name="email"
           color="outline"
+          size="small"
           label={
             <label
               htmlFor="email"
@@ -76,10 +79,11 @@ const Contact = ({ themeMode }) => {
         <br />
         <StyledTextField
           multiline={true}
-          minRows={5}
+          minRows={3}
           id="message"
           name="message"
           color="outline"
+          size="small"
           label={
             <label
               htmlFor="message"
@@ -103,11 +107,13 @@ const Contact = ({ themeMode }) => {
           fullWidth={false}
           type="submit"
           disabled={state.submitting}
+          variant="outlined"
           sx={{
             paddingRight: 2,
             paddingLeft: 2,
             bgcolor: "brand.secondary",
             color: "brand.logogrey",
+            borderColor: "brand.logogrey",
             "&:hover": {
               bgcolor: "brand.secondary",
               color: "brand.logogrey",

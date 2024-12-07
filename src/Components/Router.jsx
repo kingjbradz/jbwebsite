@@ -1,7 +1,7 @@
 import React from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 import { Box } from "@mui/material";
-import About from "../Pages/About";
+import Stack from "../Pages/Stack";
 import Home from "../Pages/Home";
 import Contact from "../Pages/Contact";
 import App404 from "../Pages/App404";
@@ -42,9 +42,9 @@ const Router = ({ themeMode, noShow, setNoShow }) => {
           element={<Home noShow={setNoShow(false)} themeMode={themeMode} />}
         />
         <Route
-          path="/about"
+          path="/stack"
           element={
-            <About noShow={setNoShow(false)} themeMode={themeMode} />
+            <Stack noShow={setNoShow(false)} themeMode={themeMode} />
           }
         />
         <Route path="/history" element={<History noShow={setNoShow(false)} themeMode={themeMode} />} />

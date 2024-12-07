@@ -17,7 +17,7 @@ import Sidebar from "./Sidebar";
 
 const navItems = [
   { text: "Home", path: "/" },
-  { text: "About", path: "/about" },
+  { text: "Stack", path: "/stack" },
   { text: "History", path: "/history" },
   { text: "Contact", path: "/contact" },
 ];
