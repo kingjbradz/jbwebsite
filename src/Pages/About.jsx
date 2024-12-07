@@ -18,12 +18,12 @@ const About = ({ themeMode }) => {
           <RowBox>
             <Typography
               variant="h4"
-              sx={{
-                color: "brand.secondary",
-                width: is750 ? 750 : "auto",
-              }}
+              // sx={{
+              //   color: "brand.secondary",
+              //   width: is750 ? 750 : "auto",
+              // }}
             >
-              JORDAN BRADLEY IS A CUNT
+              HELLO
             </Typography>
           </RowBox>
         </LineBox>

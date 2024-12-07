@@ -73,11 +73,11 @@ const Navbar = ({ themeMode, setThemeMode, noShow, setNoShow }) => {
                             path === location.pathname
                               ? "brand.logogrey"
                               : "brand.primary",
-                          borderBottom:
-                            path === location.pathname
-                              ? (theme) =>
-                                  `5px solid ${theme.palette.brand.logogrey}`
-                              : "",
+                            // borderTop:
+                            //   path === location.pathname
+                            //     ? (theme) =>
+                            //         `5px solid ${theme.palette.brand.logogrey}`
+                            //     : "",
                           borderRadius: 0,
                           marginLeft: 2,
                           fontWeight: 700

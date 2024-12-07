@@ -13,11 +13,7 @@ const Router = ({ themeMode, noShow, setNoShow }) => {
     <Box
       sx={{
         height:
-          location.pathname === "/"
-            ? "100%"
-            : location.pathname === "/listen"
-            ? "100%"
-            : "auto",
+          "100%",
         paddingTop: location.pathname === "/" && "64px",
         flexGrow: "1",
         overflow: "auto",
