@@ -4,12 +4,12 @@ import { Typography, TextField, Button, useMediaQuery } from "@mui/material";
 import { Container } from "../Components/Elements";
 import { styled } from "@mui/system";
 
-const StyledTextField = styled(TextField)(({ theme }) => ({
+const StyledTextField = styled(TextField)(() => ({
   borderRadius: "8px",
   backgroundColor: "#FFFEFE",
 }));
 
-const Contact = ({ themeMode }) => {
+const Contact = () => {
   const is600 = useMediaQuery("( min-width: 600px )");
   const [state, handleSubmit] = useForm("xwkwrkyr");
   if (state.succeeded) {
@@ -123,15 +123,6 @@ const Contact = ({ themeMode }) => {
           Submit
         </Button>
       </form>
-      {/* <br />
-      <Typography
-        sx={{ color: "brand.secondary", fontSize: "12px", textAlign: "center" }}
-      >
-        You can also reach me at:
-        <br />
-        hi@doneproperly.berlin
-      </Typography>
-      <br /> */}
     </Container>
   );
 };

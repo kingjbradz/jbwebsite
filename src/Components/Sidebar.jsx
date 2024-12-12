@@ -1,7 +1,7 @@
 import React from "react";
 import { Drawer, Button, Box, IconButton } from "@mui/material";
 import CloseIcon from '@mui/icons-material/Close';
-// import SocialLinks from "./SocialLinks";
+import SocialLinks from "./SocialLinks";
 
 const Sidebar = ({
   sidebarOpen,
@@ -65,7 +65,7 @@ const Sidebar = ({
             </React.Fragment>
           );
         })}
-        {/* <SocialLinks /> */}
+        <SocialLinks />
       </Box>
     </Drawer>
   );

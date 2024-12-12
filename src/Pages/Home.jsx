@@ -1,15 +1,19 @@
 import React from "react"
-import { useNavigate } from "react-router-dom"
-import { Box, useMediaQuery } from "@mui/material"
+import Typography from "@mui/material/Typography"
 import { Container } from "../Components/Elements"
 
-const Home = ({ themeMode }) => {
-    const navigate = useNavigate()
-    const is740 = useMediaQuery("( min-width: 740px )")
+const Home = () => {
     return (
-        <Container sx={{ height: "100%" }}>
-            home page
-        </Container>
+      <Container sx={{ 
+        height: "100%",
+        display: "flex",
+        flexDirection: "column",
+        padding: 4,
+        }}>
+        <Typography variant="h3" sx={{ marginBottom: 2 }}>
+          JORDAN BRADLEY
+        </Typography>
+      </Container>
     )
 }
 

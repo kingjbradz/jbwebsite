@@ -1,22 +1,18 @@
 import { useState } from "react";
 import { ThemeProvider, Box } from "@mui/material";
-import { lightTheme } from "./Components/LightTheme";
-import { lightTheme as darkTheme } from "./Components/DarkTheme";
+import { theme } from "./Components/Theme";
 import Navbar from "./Components/Navbar";
 import Router from "./Components/Router";
 import SphereInPyramid from "./Components/SphereInPyramid";
 
 function App() {
-  const [themeMode, setThemeMode] = useState(false);
   const [noShow, setNoShow] = useState(false);
 
   return (
-    <ThemeProvider theme={!themeMode ? lightTheme : darkTheme}>
+    <ThemeProvider theme={theme}>
       <Box sx={{ display: 'flex', flexDirection: 'column', height: '100vh' }}>
         {/* Navbar */}
         <Navbar
-          themeMode={themeMode}
-          setThemeMode={setThemeMode}
           noShow={noShow}
           setNoShow={setNoShow}
         />
@@ -40,8 +36,6 @@ function App() {
             }}
           >
             <Router
-              themeMode={themeMode}
-              noShow={noShow}
               setNoShow={setNoShow}
             />
           </Box>

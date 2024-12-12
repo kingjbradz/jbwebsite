@@ -1,13 +1,12 @@
 import React from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 import { Box } from "@mui/material";
-import Stack from "../Pages/Stack";
+import About from "../Pages/About";
 import Home from "../Pages/Home";
 import Contact from "../Pages/Contact";
 import App404 from "../Pages/App404";
-import History from "../Pages/History";
 
-const Router = ({ themeMode, noShow, setNoShow }) => {
+const Router = ({ setNoShow }) => {
   const location = useLocation();
   return (
     <Box
@@ -39,22 +38,21 @@ const Router = ({ themeMode, noShow, setNoShow }) => {
       <Routes>
         <Route
           path="/"
-          element={<Home noShow={setNoShow(false)} themeMode={themeMode} />}
+          element={<Home noShow={setNoShow(false)} />}
         />
         <Route
-          path="/stack"
+          path="/about"
           element={
-            <Stack noShow={setNoShow(false)} themeMode={themeMode} />
+            <About noShow={setNoShow(false)} />
           }
         />
-        <Route path="/history" element={<History noShow={setNoShow(false)} themeMode={themeMode} />} />
         <Route
           path="/contact"
-          element={<Contact noShow={setNoShow(false)} themeMode={themeMode} />}
+          element={<Contact noShow={setNoShow(false)} />}
         />
         <Route
           path="/*"
-          element={<App404 noShow={setNoShow(false)} themeMode={themeMode} />}
+          element={<App404 noShow={setNoShow(false)} />}
         />
       </Routes>
     </Box>

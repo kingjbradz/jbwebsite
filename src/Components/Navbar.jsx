@@ -12,33 +12,27 @@ import {
   useTheme,
 } from "@mui/material";
 import Sidebar from "./Sidebar";
-// import { ThemeModeButton } from "./Elements";
-// import SocialLinks from "./SocialLinks";
+import SocialLinks from "./SocialLinks";
 
 const navItems = [
   { text: "Home", path: "/" },
-  { text: "Stack", path: "/stack" },
-  { text: "History", path: "/history" },
+  { text: "About", path: "/about" },
   { text: "Contact", path: "/contact" },
 ];
 
-const Navbar = ({ themeMode, setThemeMode, noShow, setNoShow }) => {
+const Navbar = () => { 
   const theme = useTheme();
   const navigate = useNavigate();
   const location = useLocation();
   const isMD = useMediaQuery(" (min-width: 950px) ");
   const [sidebarOpen, setSidebarOpen] = React.useState(false);
 
-  const handleMode = () => {
-    setThemeMode((current) => !current);
-  };
-
   const handleSidebar = () => {
     setSidebarOpen((current) => !current);
   };
 
   return (
-    <Box sx={{ display: "flex", justifyContent: "center", flexShrink: "0", height: "64px" }}>
+    <Box sx={{ display: "flex", justifyContent: "center", flexShrink: "0", height: "50px" }}>
       <CssBaseline />
       <AppBar sx={{ bgcolor: "brand.secondary", boxShadow: 0 }}>
         <Toolbar sx={{ justifyContent: "space-between" }}>
@@ -50,7 +44,6 @@ const Navbar = ({ themeMode, setThemeMode, noShow, setNoShow }) => {
                 minHeight: "inherit",
               }}
             >
-              {/* { isMD && <ThemeModeButton themeMode={themeMode} handleMode={handleMode} /> } */}
               <Box
                 sx={{
                   display: { xs: "none", sm: "flex" },
@@ -73,11 +66,6 @@ const Navbar = ({ themeMode, setThemeMode, noShow, setNoShow }) => {
                             path === location.pathname
                               ? "brand.logogrey"
                               : "brand.primary",
-                            // borderTop:
-                            //   path === location.pathname
-                            //     ? (theme) =>
-                            //         `5px solid ${theme.palette.brand.logogrey}`
-                            //     : "",
                           borderRadius: 0,
                           marginLeft: 2,
                           fontWeight: 700
@@ -111,14 +99,11 @@ const Navbar = ({ themeMode, setThemeMode, noShow, setNoShow }) => {
                 theme={theme}
                 location={location}
                 navigate={navigate}
-                setThemeMode={setThemeMode}
-                themeMode={themeMode}
               />
             </Box>
           )}
-          {/* {!isMD && <ThemeModeButton themeMode={themeMode} handleMode={handleMode} />} */}
           {!isMD && <Box sx={{ marginRight: 5 }} />}
-          {/* {isMD && <SocialLinks /> } */}
+          {isMD && <SocialLinks /> }
         </Toolbar>
       </AppBar>
     </Box>
