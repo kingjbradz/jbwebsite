@@ -8,6 +8,7 @@ import SphereInPyramid from "./Components/SphereInPyramid";
 function App() {
   const [noShow, setNoShow] = useState(false);
   const is530 = useMediaQuery("( min-width: 530px )")
+  const is900 = useMediaQuery("( min-width: 900px )")
   return (
     <ThemeProvider theme={theme}>
       <Box sx={{ display: 'flex', flexDirection: 'column', height: '100vh' }}>
@@ -42,7 +43,7 @@ function App() {
           {/* SphereInPyramid Section */}
           <Box
             sx={{
-              flex: 1, // Takes up equal space with Router
+              flex: is900 && 1, // Takes up equal space with Router
               minHeight: 0, // Allows proper flex child behavior
             }}
           >
