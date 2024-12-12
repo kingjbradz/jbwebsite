@@ -50,11 +50,11 @@ const Sidebar = ({
                 sx={{
                   color:
                     path === location.pathname
-                      ? "brand.logogrey"
+                      ? "brand.outline"
                       : "brand.primary",
                   borderBottom:
                     path === location.pathname
-                      ? (theme) => `5px solid ${theme.palette.brand.logogrey}`
+                      ? (theme) => `5px solid ${theme.palette.brand.outline}`
                       : `1px solid ${theme.palette.brand.primary}`,
                   borderRadius: 0,
                   fontWeight: 700

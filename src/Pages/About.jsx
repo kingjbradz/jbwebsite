@@ -14,8 +14,6 @@ import { Container } from "../Components/Elements"
 
 const Home = () => {
     const theme = useTheme()
-    const navigate = useNavigate()
-    const is740 = useMediaQuery("( min-width: 740px )")
     return (
       <Container sx={{ 
         height: "100%",
@@ -103,11 +101,36 @@ const Home = () => {
               Dynamic Australian full-stack developer with 3+ years of industry experience, specialising in ReactJS, AWS and Phoenix.
             </Typography>
             <br /><br />
-            <Typography>
-              
-            </Typography>
             <Typography variant="p">
-              You can see my current CV <a href="https://jrb-resume-website.s3.ap-southeast-2.amazonaws.com/JordanBradley-CV.pdf">here</a>
+              Some notable achievements I'm particularly proud of:
+            </Typography>
+            <br />
+            <Typography variant="p">
+              • Set up a full migration of front-end, back-end and database from Heroku to AWS within my first <i>three months</i> with ensured data continuity and only an hour of downtime.
+            </Typography>
+            <br />
+            <Typography variant="p">
+              • Multiple single handed system-wide front-end renewal with design team collaboration
+            </Typography>
+            <br />
+            <Typography variant="p">
+              • OWASP best practices integration with outside consultant confirmed approval.
+            </Typography>
+            <br />
+            <Typography variant="p">
+              • Same-day turn around component creation
+            </Typography>
+            <br />
+            <Typography variant="p">
+              • Multiple cross time-zone collaborations with both in-house and third-party teams
+            </Typography>
+            <br />
+            <Typography variant="p">
+              • Mentorship to junior front-end developers
+            </Typography>
+            <br /><br />
+            <Typography variant="p">
+              You can see my current CV <a style={{ color: theme.palette.brand.particle }} href="https://jrb-resume-website.s3.ap-southeast-2.amazonaws.com/JordanBradley-CV.pdf">here</a>.
             </Typography>
             </AccordionDetails>
         </Accordion>

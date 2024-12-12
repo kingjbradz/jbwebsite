@@ -112,11 +112,11 @@ const Contact = () => {
             paddingRight: 2,
             paddingLeft: 2,
             bgcolor: "brand.secondary",
-            color: "brand.logogrey",
-            borderColor: "brand.logogrey",
+            color: "brand.outline",
+            borderColor: "brand.outline",
             "&:hover": {
               bgcolor: "brand.secondary",
-              color: "brand.logogrey",
+              color: "brand.outline",
             },
           }}
         >

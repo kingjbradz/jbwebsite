@@ -64,7 +64,7 @@ const Navbar = () => {
                         sx={{
                           color:
                             path === location.pathname
-                              ? "brand.logogrey"
+                              ? "brand.particle"
                               : "brand.primary",
                           borderRadius: 0,
                           marginLeft: 2,
