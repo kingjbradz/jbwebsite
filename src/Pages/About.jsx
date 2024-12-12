@@ -1,5 +1,4 @@
 import React from "react"
-import { useNavigate } from "react-router-dom"
 import { 
   Accordion,
   AccordionSummary,
@@ -12,16 +11,20 @@ import {
 import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
 import { Container } from "../Components/Elements"
 
-const Home = () => {
-    const theme = useTheme()
+const About = ({ padding }) => {
+    const theme = useTheme();
+    const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
     return (
-      <Container sx={{ 
+      <Container 
+      id="find-me"
+      sx={{ 
         height: "100%",
         display: "flex",
         flexDirection: "column",
         padding: 4,
         alignItems: "flex-start",
-        justifyContent: "center"
+        justifyContent: "center",
+        padding: padding
         }}>
         <Accordion 
           sx={{ 
@@ -37,7 +40,12 @@ const Home = () => {
               BIOGRAPHY
             </Typography>
             </AccordionSummary>
-          <AccordionDetails>
+          <AccordionDetails
+            sx={{
+              maxHeight: isSmallScreen ? "300px" : "500px", // Adjust height based on screen size
+              overflowY: "auto", // Enable scrolling for overflow content
+            }}
+          >
             <Typography variant="p">
               I'm a dynamic Australian full-stack developer with 3+ years of industry experience, specialising in ReactJS, AWS and Phoenix.
             </Typography>
@@ -336,35 +344,35 @@ const Home = () => {
             </Box>
             </AccordionDetails>
         </Accordion>
-        {/* <Accordion 
-          sx={{ 
-            bgcolor: "brand.secondary", 
-            color: "brand.primary", 
-            border: `1px solid ${theme.palette.brand.outline}`,
-          }}
-        >
-          <AccordionSummary
-            expandIcon={<ArrowDownwardIcon sx={{ color: "brand.outline" }}  />}
-          >
-            <Typography variant="h6">
-              EXPERIENCE
-            </Typography>
-            </AccordionSummary>
-          <AccordionDetails>
-            <Typography variant="p">
-              Dynamic Australian full-stack developer with 3+ years of industry experience, specialising in ReactJS, AWS and Phoenix.
-            </Typography>
-            <br /><br />
-            <Typography>
-              
-            </Typography>
-            <Typography variant="p">
-              You can see my current CV <a href="https://jrb-resume-website.s3.ap-southeast-2.amazonaws.com/JordanBradley-CV.pdf">here</a>
-            </Typography>
-            </AccordionDetails>
-        </Accordion> */}
       </Container>
     )
-}
+  }
 
-export default Home
+  export default About
+  {/* <Accordion 
+    sx={{ 
+      bgcolor: "brand.secondary", 
+      color: "brand.primary", 
+      border: `1px solid ${theme.palette.brand.outline}`,
+    }}
+  >
+    <AccordionSummary
+      expandIcon={<ArrowDownwardIcon sx={{ color: "brand.outline" }}  />}
+    >
+      <Typography variant="h6">
+        EXPERIENCE
+      </Typography>
+      </AccordionSummary>
+    <AccordionDetails>
+      <Typography variant="p">
+        Dynamic Australian full-stack developer with 3+ years of industry experience, specialising in ReactJS, AWS and Phoenix.
+      </Typography>
+      <br /><br />
+      <Typography>
+        
+      </Typography>
+      <Typography variant="p">
+        You can see my current CV <a href="https://jrb-resume-website.s3.ap-southeast-2.amazonaws.com/JordanBradley-CV.pdf">here</a>
+      </Typography>
+      </AccordionDetails>
+  </Accordion> */}

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ThemeProvider, Box } from "@mui/material";
+import { ThemeProvider, Box, useMediaQuery } from "@mui/material";
 import { theme } from "./Components/Theme";
 import Navbar from "./Components/Navbar";
 import Router from "./Components/Router";
@@ -7,7 +7,7 @@ import SphereInPyramid from "./Components/SphereInPyramid";
 
 function App() {
   const [noShow, setNoShow] = useState(false);
-
+  const is530 = useMediaQuery("( min-width: 530px )")
   return (
     <ThemeProvider theme={theme}>
       <Box sx={{ display: 'flex', flexDirection: 'column', height: '100vh' }}>
@@ -31,8 +31,8 @@ function App() {
           {/* Router Section */}
           <Box
             sx={{
-              flex: 1, // Takes up equal space with SphereInPyramid
-              minHeight: 0, // Allows proper flex child behavior
+              flex: is530 && 1, // Takes up equal space with SphereInPyramid
+              minHeight: is530 && 0, // Allows proper flex child behavior
             }}
           >
             <Router

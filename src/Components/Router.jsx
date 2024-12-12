@@ -1,6 +1,6 @@
 import React from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
-import { Box } from "@mui/material";
+import { Box, useMediaQuery } from "@mui/material";
 import About from "../Pages/About";
 import Home from "../Pages/Home";
 import Contact from "../Pages/Contact";
@@ -8,12 +8,13 @@ import App404 from "../Pages/App404";
 
 const Router = ({ setNoShow }) => {
   const location = useLocation();
+  const is530 = useMediaQuery("( min-width: 430px )")
+  const padding = is530 && 4
   return (
     <Box
       sx={{
-        height:
-          "100%",
-        paddingTop: location.pathname === "/" && "64px",
+        height: is530 ? "100%" : "auto",
+        paddingTop: location.pathname === "/" && is530 && "64px",
         flexGrow: "1",
         overflow: "auto",
         "-ms-overflow-style": "none" /* Hide scrollbars - IE and Edge */,
@@ -38,21 +39,21 @@ const Router = ({ setNoShow }) => {
       <Routes>
         <Route
           path="/"
-          element={<Home noShow={setNoShow(false)} />}
+          element={<Home noShow={setNoShow(false)} padding={padding}  />}
         />
         <Route
           path="/about"
           element={
-            <About noShow={setNoShow(false)} />
+            <About noShow={setNoShow(false)} padding={padding} />
           }
         />
         <Route
           path="/contact"
-          element={<Contact noShow={setNoShow(false)} />}
+          element={<Contact noShow={setNoShow(false)} padding={padding} />}
         />
         <Route
           path="/*"
-          element={<App404 noShow={setNoShow(false)} />}
+          element={<App404 noShow={setNoShow(false)} padding={padding} />}
         />
       </Routes>
     </Box>

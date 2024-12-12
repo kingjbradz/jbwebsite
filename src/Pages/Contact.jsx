@@ -9,7 +9,7 @@ const StyledTextField = styled(TextField)(() => ({
   backgroundColor: "#FFFEFE",
 }));
 
-const Contact = () => {
+const Contact = ({ padding }) => {
   const is600 = useMediaQuery("( min-width: 600px )");
   const [state, handleSubmit] = useForm("xwkwrkyr");
   if (state.succeeded) {
@@ -29,7 +29,7 @@ const Contact = () => {
           flexDirection: "column",
           textAlign: "center",
           minWidth: is600 ? "350px" : "100%",
-          padding: "8px",
+          padding: padding,
           height: "100%",
           justifyContent: "center"
         }}
