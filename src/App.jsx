@@ -43,7 +43,7 @@ function App() {
           {/* SphereInPyramid Section */}
           <Box
             sx={{
-              flex: is900 && 1, // Takes up equal space with Router
+              flex: 1, // Takes up equal space with Router
               minHeight: 0, // Allows proper flex child behavior
             }}
           >
